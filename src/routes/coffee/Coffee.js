@@ -85,6 +85,7 @@ const Coffee = () => {
         showsHorizontalScrollIndicator={false}
         snapToInterval={width}
         pagingEnabled
+        scrollEventThrottle={16}
         contentContainerStyle={styles.contentContainerStyle}>
         {Slider.map((item, index) => (
           <CoffeeContent {...item} index={index} />
