@@ -16,6 +16,8 @@ import MyHeader from './src/components/header/Haeder';
 import AddToCartModal from './src/components/add-to-cart-modal/AddToCartModal';
 import Home from './src/routes/home-screen/Home';
 import rootSaga from './src/redux/sagas/root-saga';
+import Routes from './src/routes';
+import ShoppingCart from './src/components/shopping-cart/ShoppingCart';
 
 const sagaMiddleware = createSagaMiddleware();
 var middlewares = [logger, sagaMiddleware];
@@ -26,18 +28,18 @@ const App = () => {
   const addTocartModal = useRef(null);
 
   const open = (item) => {
-    addTocartModal.current.open(item)
+    addTocartModal.current.open(item);
   };
   return (
     <Provider store={store}>
-        <MyHeader
-          backgroundColor={'red'}
-          body={
-            <Text style={{fontSize: 20, fontWeight: 'bold'}}>Demo App</Text>
-          }
-        />
-        <Home open={open} />
-        <AddToCartModal ref={addTocartModal} />
+      <MyHeader
+        backgroundColor={'red'}
+        body={<Text style={{fontSize: 20, fontWeight: 'bold'}}>Demo App</Text>}
+      />
+      {/* <Home open={open} /> */}
+      <Routes />
+      <ShoppingCart />
+      <AddToCartModal ref={addTocartModal} />
     </Provider>
   );
 };
