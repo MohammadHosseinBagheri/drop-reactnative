@@ -26,9 +26,14 @@ const CoffeeTab = () => (
     <Tab.Screen name="searchtwo" component={SearchTwo} />
   </Tab.Navigator>
 );
-const TabbarConfig = () => (
-  <Tab.Navigator tabBarOptions={{scrollEnabled:'true'}} tabBar={(props) => <MyTabBar {...props} />}>
-    <Tab.Screen name="coffee" component={Coffee} />
+const TabbarConfig = ({open}) => (
+  <Tab.Navigator
+    tabBarOptions={{scrollEnabled: 'true'}}
+    tabBar={(props) => <MyTabBar {...props} />}>
+    <Tab.Screen
+      name="coffee"
+      component={(...props) => <Coffee open={open} {...props} />}
+    />
     <Tab.Screen name="food" component={Food} />
     <Tab.Screen name="gift" component={Gifts} />
     <Tab.Screen
@@ -40,10 +45,10 @@ const TabbarConfig = () => (
     />
   </Tab.Navigator>
 );
-export default function Routes() {
+export default function Routes({open}) {
   return (
     <NavigationContainer>
-      <TabbarConfig />
+      <TabbarConfig open={open} />
     </NavigationContainer>
   );
 }
