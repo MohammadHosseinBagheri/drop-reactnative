@@ -45,10 +45,12 @@ const TabbarConfig = ({open}) => (
     />
   </Tab.Navigator>
 );
-export default function Routes({open}) {
+function Routes({open}) {
   return (
     <NavigationContainer>
       <TabbarConfig open={open} />
     </NavigationContainer>
   );
 }
+
+export default Routes;
