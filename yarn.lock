@@ -5890,6 +5890,11 @@ react-native-screens@^2.10.1:
   resolved "https://registry.yarnpkg.com/react-native-screens/-/react-native-screens-2.10.1.tgz#06d22fae87ef0ce51c616c34a199726db1403b95"
   integrity sha512-Z2kKSk4AwWRQNCBmTjViuBQK0/Lx0jc25TZptn/2gKYUCOuVRvCekoA26u0Tsb3BIQ8tWDsZW14OwDlFUXW1aw==
 
+react-native-swipe-gestures@^1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/react-native-swipe-gestures/-/react-native-swipe-gestures-1.0.5.tgz#a172cb0f3e7478ccd681fd36b8bfbcdd098bde7c"
+  integrity sha512-Ns7Bn9H/Tyw278+5SQx9oAblDZ7JixyzeOczcBK8dipQk2pD7Djkcfnf1nB/8RErAmMLL9iXgW0QHqiII8AhKw==
+
 react-native-swipe-up-down@^1.0.7:
   version "1.0.7"
   resolved "https://registry.yarnpkg.com/react-native-swipe-up-down/-/react-native-swipe-up-down-1.0.7.tgz#083714875b5db1c81d589a09eb8c32a9ffae30a4"
@@ -6254,6 +6259,14 @@ rimraf@~2.2.6:
   version "2.2.8"
   resolved "https://registry.yarnpkg.com/rimraf/-/rimraf-2.2.8.tgz#e439be2aaee327321952730f99a8929e4fc50582"
   integrity sha1-5Dm+Kq7jJzIZUnMPmaiSnk/FBYI=
+
+rn-sliding-up-panel@^2.4.3:
+  version "2.4.3"
+  resolved "https://registry.yarnpkg.com/rn-sliding-up-panel/-/rn-sliding-up-panel-2.4.3.tgz#50ab32f6ab4c4d665562b9244e01a057103df3da"
+  integrity sha512-P28zb0niWN0MFCoh82w3th8RPdoStP+PrP/0Bg761Gn7MH1x9I124+BfnxvcUmDawNEWYyYLs/JowpuLizRJkg==
+  dependencies:
+    clamp "^1.0.1"
+    prop-types "^15.7.2"
 
 rsvp@^4.8.4:
   version "4.8.5"
