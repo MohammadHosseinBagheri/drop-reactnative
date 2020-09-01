@@ -12,9 +12,10 @@ import {
 import {connect} from 'react-redux';
 import AddToCartModal from '../add-to-cart-modal/AddToCartModal';
 import {fetchCollectionsStart} from '../../redux/collections/action/collection';
+import {openModalItem} from '../../redux/cart/action/cart';
 const {width} = Dimensions.get('window');
 
-const CoffeeContent = ({title, items, open}) => {
+const CoffeeContent = ({title, items, open, selectedItem}) => {
   console.log(items);
   return (
     <Animated.View
@@ -29,7 +30,10 @@ const CoffeeContent = ({title, items, open}) => {
         numColumns={3}
         renderItem={({item, index}) => (
           <TouchableOpacity
-            onPress={() => open(item)}
+            onPress={async () => {
+              await selectedItem(item);
+              await open();
+            }}
             style={{
               justifyContent: 'center',
               alignItems: 'center',
@@ -68,11 +72,13 @@ const CoffeeContent = ({title, items, open}) => {
 const mapStateToProps = (state) => {
   return {
     items: state.collections.items,
+    selectedItem: state.cart.openModalItem,
   };
 };
 const mapDispatchToProps = (dispatch) => {
   return {
     fetchCollectionsStart: () => dispatch(fetchCollectionsStart()),
+    selectedItem: (item) => dispatch(openModalItem(item)),
   };
 };
 export default connect(mapStateToProps, mapDispatchToProps)(CoffeeContent);
