@@ -1,5 +1,3 @@
-const {cos} = require('react-native-reanimated');
-
 export const COLLECTIONS_ITEM = 'COLLECTIONS_ITEM';
 export const FETCH_COLLECTIONS_START = 'FETCH_COLLECTIONS_START';
 export const FETCH_COLLECTIONS_SUCCESS = 'FETCH_COLLECTIONS_SUCCESS';
