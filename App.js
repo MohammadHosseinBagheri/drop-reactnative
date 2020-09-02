@@ -20,16 +20,33 @@ import Routes from './src/routes';
 import ShoppingCart from './src/components/shopping-cart/ShoppingCart';
 import {Button} from 'native-base';
 import AppContent from './src/components/app-content/AppContent';
+import {persistStore, persistReducer} from 'redux-persist';
+import storage from 'redux-persist/lib/storage';
+import {PersistGate} from 'redux-persist/integration/react';
 
-const sagaMiddleware = createSagaMiddleware();
-var middlewares = [logger, sagaMiddleware];
-const store = createStore(reducer, applyMiddleware(...middlewares));
-sagaMiddleware.run(rootSaga);
+var middlewares = [];
+
+if (process.env.NODE_END === 'development') {
+  middlewares.push(logger);
+}
+
+const config = {
+  key: 'root',
+  storage,
+};
+
+const pReducer = persistReducer(config, reducer);
+
+const store = createStore(pReducer, applyMiddleware(...middlewares));
+
+const pStore = persistStore(store);
 
 const App = () => {
   return (
     <Provider store={store}>
-      <AppContent />
+      <PersistGate persistor={pStore}>
+        <AppContent />
+      </PersistGate>
     </Provider>
   );
 };
