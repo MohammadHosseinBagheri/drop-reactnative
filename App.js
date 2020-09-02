@@ -10,6 +10,7 @@ import {Provider} from 'react-redux';
 import {createStore, applyMiddleware} from 'redux';
 import logger from 'redux-logger';
 import reducer from './src/redux/root-reducer';
+
 import createSagaMiddleware from 'redux-saga';
 
 import MyHeader from './src/components/header/Haeder';
@@ -32,7 +33,8 @@ if (process.env.NODE_END === 'development') {
 
 const config = {
   key: 'root',
-  storage,
+  storage: storage,
+  whiteList: ['collections', 'cart'],
 };
 
 const pReducer = persistReducer(config, reducer);
