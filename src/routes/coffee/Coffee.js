@@ -16,13 +16,16 @@ const ButtonWidth = (width * 20) / 100;
 const Slider = [
   {
     title: 'All',
+    index:0
   },
 
   {
     title: 'PIZZA',
+    index:1
   },
   {
     title: 'STEAK',
+    index:2
   },
 ];
 
@@ -95,7 +98,7 @@ const Coffee = ({open, fetchCollections, items}) => {
         scrollEventThrottle={1}
         contentContainerStyle={styles.contentContainerStyle}>
         {Slider.map((item, index) => (
-          <CoffeeContent open={open} {...item} index={index} />
+          <CoffeeContent open={open} {...item} titleIndex={index} />
         ))}
       </Animated.ScrollView>
     </View>
