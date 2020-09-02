@@ -16,8 +16,29 @@ import {openModalItem} from '../../redux/cart/action/cart';
 import RenderItem from './RenderItem';
 const {width} = Dimensions.get('window');
 
-const CoffeeContent = ({title, items, open, selectedItem}) => {
-  console.log(items);
+const CoffeeContent = ({title, items, open, selectedItem, titleIndex}) => {
+  //filtering data;
+  //pizza with pepsi
+  if (items) {
+    var pizza = [];
+    items.map((item) =>
+      item.food_pairing.filter((food_item) => {
+        if (food_item.includes('pizza')) {
+          pizza.push(item);
+        }
+      }),
+    );
+
+    var steak = [];
+    items.map((item) =>
+      item.food_pairing.filter((food_item) => {
+        if (food_item.includes('steak')) {
+          steak.push(item);
+        }
+      }),
+    );
+  }
+  console.log(steak);
   return (
     <Animated.View
       style={{
@@ -27,8 +48,9 @@ const CoffeeContent = ({title, items, open, selectedItem}) => {
       }}>
       <FlatList
         contentContainerStyle={{justifyContent: 'center', alignItems: 'center'}}
-        data={items}
+        data={titleIndex == 0 ? items : titleIndex == 1 ? pizza : steak}
         numColumns={3}
+        ListEmptyComponent={<Text>empty List</Text>}
         renderItem={({item, index}) => <RenderItem open={open} item={item} />}
       />
     </Animated.View>
