@@ -11,7 +11,6 @@ export const addToCart = (item) => {
   // for (let i = 0; i < arryKeys.length; i++) {
   //   return (itemArray[arryKeys[i]] = arryValues[i]);
   // }
-  // console.log(itemArray.length);
   return {
     type: ADD_TO_CART,
     payload: item,

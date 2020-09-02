@@ -45,7 +45,6 @@ const Coffee = ({open, fetchCollections, items}) => {
       const viewSize = event.nativeEvent.layoutMeasurement.width;
       const selectedIndex = Math.floor(contentOffset / viewSize);
       setSelectedIndex(selectedIndex);
-      console.log(event);
     },
   );
 

@@ -17,16 +17,13 @@ const INITIAL_STATE = {
 const collectionReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case COLLECTIONS_ITEM:
-      console.log(action.payload);
       return {
         ...state,
         items: action.payload,
       };
     // case FETCH_COLLECTIONS_START:
-    //   // console.log(action.payload);
     //   return {...state, isFetching: true};
     // case FETCH_COLLECTIONS_SUCCESS:
-    //   console.log(action.payload)
     //   return {
     //     ...state,
     //     items: action.payload,

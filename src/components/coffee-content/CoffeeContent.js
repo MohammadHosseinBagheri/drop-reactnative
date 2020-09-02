@@ -38,7 +38,6 @@ const CoffeeContent = ({title, items, open, selectedItem, titleIndex}) => {
       }),
     );
   }
-  console.log(steak);
   return (
     <Animated.View
       style={{
