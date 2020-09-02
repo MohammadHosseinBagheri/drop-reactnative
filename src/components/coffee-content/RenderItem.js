@@ -20,23 +20,18 @@ const RenderItem = ({item, open,selectedItem}) => {
         />
       </View>
       <Text numberOfLines={1}>{item.name}</Text>
-      <Text numberOfLines={1}>{item.name}</Text>
+      <Text numberOfLines={1}>{item.description}</Text>
     </TouchableOpacity>
   );
 };
-const mapStateToProps = (state) => {
-  return {
-    items: state.collections.items,
-    selectedItem: state.cart.openModalItem,
-  };
-};
+
 const mapDispatchToProps = (dispatch) => {
     return {
       fetchCollectionsStart: () => dispatch(fetchCollectionsStart()),
       selectedItem: (item) => dispatch(openModalItem(item)),
     };
   };
-export default connect(mapStateToProps,mapDispatchToProps)(RenderItem);
+export default connect(null,mapDispatchToProps)(RenderItem);
 
 const styles = StyleSheet.create({
   flatlistItem: {
