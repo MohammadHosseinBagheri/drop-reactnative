@@ -11,7 +11,7 @@ const ModalContent = ({modalItem, addToCart}) => {
       <View style={styles.leftSide}>
         <Text style={styles.titleText}>{modalItem.name}</Text>
         <Text style={styles.tagLine}>{modalItem.tagline}</Text>
-        <Text style={{color: 'white', fontSize: 12}}>{modalItem.abv}</Text>
+        <Text style={{color: 'white', fontSize: 12}}>{modalItem.srm}</Text>
         <Text numberOfLines={2} style={styles.description}>
           {modalItem.description}
         </Text>
