@@ -21,6 +21,7 @@
     "react-native-gesture-handler": "^1.7.0",
     "react-native-modalbox": "^2.0.0",
     "react-native-reanimated": "^1.13.0",
+    "react-native-restart": "^0.0.17",
     "react-native-safe-area-context": "^3.1.7",
     "react-native-screens": "^2.10.1",
     "react-native-swipe-gestures": "^1.0.5",
