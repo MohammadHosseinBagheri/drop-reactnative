@@ -7,6 +7,7 @@ import {
   Image,
   TouchableOpacity,
   Dimensions,
+  FlatList,
 } from 'react-native';
 import SwipeUpDown from 'react-native-swipe-up-down';
 import {connect} from 'react-redux';
@@ -22,21 +23,21 @@ const ItemMini = (props) => {
 const ItemFull = (props) => {
   const {addedItem, addItemToCart, removeItemFromCart, totalPrice} = props;
   return (
-    <ScrollView
-      style={{flex: 1, zIndex: 20}}
-      contentContainerStyle={{flex: 1, zIndex: 20}}>
-      <ScrollView style={{flex: 0.5}}>
-        {addedItem.map((item) => (
-          <ShoppingCartItem addedItem={item} />
-        ))}
-      </ScrollView>
+    <View
+      style={{flex: 1, zIndex: 20}}>
+      <FlatList
+      style={{flex:0.5,zIndex:10}}
+        data={addedItem}
+        ListEmptyComponent={() => <Text>s</Text>}
+        renderItem={({item, index}) => <ShoppingCartItem addedItem={item} />}
+      />
       <FullItemContent
         addedItem={addedItem}
         removeItemFromCart={removeItemFromCart}
         addItemToCart={addItemToCart}
         totalPrice={totalPrice}
       />
-    </ScrollView>
+    </View>
   );
 };
 
