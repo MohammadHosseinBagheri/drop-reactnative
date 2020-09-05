@@ -27,11 +27,11 @@ const ShoppingCartItem = (props) => {
       </View>
 
       <View style={styles.containerAddItem}>
-        <Text style={{color: 'white', fontSize: 16, fontWeight: 'bold'}}>
+        <Text numberOfLines={1} style={{color: 'white', fontSize: 14, fontWeight: 'bold',marginRight:10}}>
           {addedItem.name}
         </Text>
         <Text
-          style={{fontWeight: 'bold', fontSize: 12, color: '#EEEEEE'}}
+          style={{ fontSize: 12, color: '#EEEEEE'}}
           numberOfLines={1}>
           {addedItem.tagline}
         </Text>
@@ -98,6 +98,8 @@ const styles = StyleSheet.create({
     marginTop: 5,
     height: 25,
     borderRadius: 8,
+    alignItems:'center',
+    justifyContent:'center'
   },
   img: {
     width: 80,
@@ -118,7 +120,7 @@ const styles = StyleSheet.create({
   },
   addToCartButtonContainer: {
     flexDirection: 'row',
-    justifyContent: 'space-around',
+    justifyContent: 'space-between',
     flex: 1,
     alignItems: 'center',
     alignSelf: 'center',

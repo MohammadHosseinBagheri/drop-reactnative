@@ -1,6 +1,6 @@
 import React from 'react';
 import {StyleSheet, View,Dimensions} from 'react-native';
-
+import CustomButton from './CustomButton';
 const ButtonView = () => {
   return (
     <View style={styles.contentView}>
