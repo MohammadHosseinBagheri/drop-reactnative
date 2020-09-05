@@ -13,24 +13,29 @@ import {
 const {width} = Dimensions.get('window');
 const ButtonWidth = (width * 20) / 100;
 
+//coffe page title bar
+
 const Slider = [
   {
     title: 'All',
-    index:0
+    index: 0,
   },
 
   {
     title: 'PIZZA',
-    index:1
+    index: 1,
   },
   {
     title: 'STEAK',
-    index:2
+    index: 2,
   },
 ];
 
 const Coffee = ({open, fetchCollections, items}) => {
+  //x is horizontal scrolling value
   const x = new Animated.Value(0);
+
+  //index of slide
   const [selectedIndex, setSelectedIndex] = useState(0);
 
   const scrollViewRef = useRef(null);
@@ -48,12 +53,15 @@ const Coffee = ({open, fetchCollections, items}) => {
     },
   );
 
+  //fetching data from api
   const fetchData = async () => {
     const response = await fetch('https://api.punkapi.com/v2/beers');
     const responseJson = await response.json();
+    // set into redux state
     fetchCollections(responseJson);
   };
 
+  // coffee slides animation
   const translateX = x.interpolate({
     inputRange: [0, width, 2 * width],
     outputRange: [
