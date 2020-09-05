@@ -8,6 +8,18 @@ import AppContent from './src/components/app-content/AppContent';
 import {persistStore, persistReducer} from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 import {PersistGate} from 'redux-persist/integration/react';
+import {I18nManager, AsyncStorage} from 'react-native';
+import RNRestart from 'react-native-restart';
+
+
+AsyncStorage.setItem('lang','ar',() => {
+    AsyncStorage.getItem('lang', (value) => {
+      if(value != null){
+        I18nManager.forceRTL(false);
+        RNRestart.Restart();
+      }
+    });
+})
 
 var middlewares = [];
 
