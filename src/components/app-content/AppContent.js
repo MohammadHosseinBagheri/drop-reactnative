@@ -5,7 +5,6 @@ import Routes from '../../routes';
 import AddToCartModal from '../add-to-cart-modal/AddToCartModal';
 import ShoppingCart from '../shopping-cart/ShoppingCart';
 import {connect} from 'react-redux';
-import {Icon} from 'native-base';
 import EmptyShoppingCart from '../empty-shopping-cart/EmptyShoppingCart';
 const AppContent = ({addedItem}) => {
   const addTocartModal = useRef(null);
