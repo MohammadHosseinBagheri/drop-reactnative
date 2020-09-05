@@ -6,19 +6,16 @@ import {
   Animated,
   Dimensions,
   FlatList,
-  TouchableOpacity,
-  Image,
 } from 'react-native';
 import {connect} from 'react-redux';
-import AddToCartModal from '../add-to-cart-modal/AddToCartModal';
 import {fetchCollectionsStart} from '../../redux/collections/action/collection';
 import {openModalItem} from '../../redux/cart/action/cart';
 import RenderItem from './RenderItem';
 const {width} = Dimensions.get('window');
 
-const CoffeeContent = ({title, items, open, selectedItem, titleIndex}) => {
+const CoffeeContent = ({ items, open, titleIndex}) => {
   //filtering data;
-  //pizza with pepsi
+    //pizza with pepsi
   if (items) {
     var pizza = [];
     items.map((item) =>
@@ -28,7 +25,7 @@ const CoffeeContent = ({title, items, open, selectedItem, titleIndex}) => {
         }
       }),
     );
-
+    //steak with pepsi
     var steak = [];
     items.map((item) =>
       item.food_pairing.filter((food_item) => {
