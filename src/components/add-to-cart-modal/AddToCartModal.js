@@ -14,13 +14,16 @@ import {addToCart, openModalItem} from '../../redux/cart/action/cart';
 import ModalContent from './ModalContent';
 const {width} = Dimensions.get('window');
 
+//add to cart modal
 class AddToCartModal extends Component {
   constructor(props) {
     super(props);
   }
+  //open modal box
   open = () => {
     this.refs.addToCartModal.open();
   };
+  //close modal box
   close = () => {
     this.refs.addToCartModal.close();
   };
@@ -43,7 +46,7 @@ class AddToCartModal extends Component {
 }
 const styles = StyleSheet.create({
   modalContainer: {
-    height: 200,
+    height: 250,
     width: (90 * width) / 100,
     flex: 1,
     backgroundColor: 'black',
@@ -79,11 +82,13 @@ const mapDispatchToProps = (dispatch) => {
     openModalItem: (item) => dispatch(openModalItem(item)),
   };
 };
+
 const mapStateToProps = (state) => {
   return {
     modalItem: state.cart.openModalItem,
   };
 };
+
 export default connect(mapStateToProps, mapDispatchToProps, null, {
   forwardRef: true,
 })(AddToCartModal);
