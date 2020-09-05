@@ -3,6 +3,7 @@ import {
   REMOVE_ITEM_FROM_CART,
   DELETE_CART,
   OPEN_MODAL_ITEM,
+  SHOW_CART,
 } from '../../../constant/types';
 export const addToCart = (item) => {
   // const itemArray = [];
@@ -35,5 +36,10 @@ export const openModalItem = (item) => {
   return {
     type: OPEN_MODAL_ITEM,
     payload: item,
+  };
+};
+export const showCart = () => {
+  return {
+    type: SHOW_CART,
   };
 };
