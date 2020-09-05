@@ -46,7 +46,7 @@ class AddToCartModal extends Component {
 }
 const styles = StyleSheet.create({
   modalContainer: {
-    height: 250,
+    height: 230,
     width: (90 * width) / 100,
     flex: 1,
     backgroundColor: 'black',

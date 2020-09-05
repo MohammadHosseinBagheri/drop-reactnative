@@ -15,7 +15,7 @@ const ModalContent = ({modalItem, addToCart}) => {
         <Text numberOfLines={2} style={styles.description}>
           {modalItem.description}
         </Text>
-        <Text numberOfLines={3} style={styles.foodParing}>
+        <Text numberOfLines={2} style={styles.foodParing}>
           {modalItem.food_pairing}
         </Text>
       </View>
@@ -49,7 +49,7 @@ export default connect(null, mapDispatchToProps)(ModalContent);
 
 const styles = StyleSheet.create({
   closeButton: {textTransform: 'uppercase', fontWeight: 'bold'},
-  viewContent: {flex: 1, flexDirection: 'row'},
+  viewContent: {flex: 1, flexDirection: 'row',marginVertical:10},
   addToCartButton: {
     backgroundColor: 'white',
     borderRadius: 15,
